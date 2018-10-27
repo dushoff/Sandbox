@@ -28,6 +28,8 @@ Sources += Makefile .ignore .gitignore
 
 msrepo = https://github.com/dushoff
 ms = makestuff
+Sources += makestuff
+
 Ignore += local.mk
 -include local.mk
 -include $(ms)/os.mk
