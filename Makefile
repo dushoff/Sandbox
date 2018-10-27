@@ -6,6 +6,20 @@ current: target
 
 ##################################################################
 
+## varnames
+
+test:
+
+dir = best test vest
+
+$(dir):rockstar=pill
+$(dir): bir
+
+bir:
+	@echo $(rockstar)
+
+##################################################################
+
 ## Defs
 
 # stuff
