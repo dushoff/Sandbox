@@ -45,10 +45,14 @@ $(ms):
 
 ######################################################################
 
+## Working with Mike, who is complaining about rules
+
+test.Rout: test.R
+
 ### Makestuff
 
 -include $(ms)/git.mk
 -include $(ms)/visual.mk
 
-# -include $(ms)/wrapR.mk
+-include $(ms)/wrapR.mk
 
