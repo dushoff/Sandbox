@@ -24,7 +24,7 @@ bir:
 
 # stuff
 
-Sources += Makefile .ignore .gitignore
+Sources += Makefile
 
 msrepo = https://github.com/dushoff
 ms = makestuff
@@ -39,9 +39,16 @@ Ignore += local.mk
 ### Untracked simple version of makestuff is the default
 Ignore += $(ms)
 ## Sources += $(ms)
-Makefile: $(ms)
+Makefile: $(ms) makestuff/Makefile
 $(ms):
 	git clone $(msrepo)/$(ms)
+
+makestuff/Makefile:
+	git submodule update -i makestuff
+
+######################################################################
+
+subdirs += caching/ stepR/
 
 ######################################################################
 
