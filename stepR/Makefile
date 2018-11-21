@@ -24,10 +24,20 @@ $(ms):
 
 ######################################################################
 
+test.Rout: test.R
+
+test.test:
+	$(MAKE) rclean
+	$(MAKE) Makefile
+	$(MAKE) test.Rout
+	$(MAKE) test.Rout
+	touch add.R
+	$(MAKE) test.Rout
+
 ### Makestuff
 
 -include $(ms)/git.mk
 -include $(ms)/visual.mk
 
 # -include $(ms)/wrapR.mk
-
+-include makestuff/stepR.mk
