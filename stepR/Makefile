@@ -26,15 +26,11 @@ $(ms):
 
 Sources += $(wildcard *.R)
 
+test.deps: test.R makestuff/rstep.pl
+	$(PUSH)
 test.Rout: test.R
 
-test.test:
-	$(MAKE) rclean
-	$(MAKE) Makefile
-	$(MAKE) test.Rout
-	$(MAKE) test.Rout
-	touch add.R
-	$(MAKE) test.Rout
+plots.Rout: plots.R
 
 ### Makestuff
 
