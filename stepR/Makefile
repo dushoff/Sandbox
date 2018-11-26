@@ -1,4 +1,4 @@
-# Sandbox/caching
+# Sandbox/stepR
 ### Hooks for the editor to set the default target
 
 current: target
@@ -10,7 +10,7 @@ current: target
 
 # stuff
 
-Sources += Makefile
+Sources += Makefile notes.md
 
 # -include $(ms)/perl.def
 
@@ -31,6 +31,9 @@ test.deps: test.R makestuff/rstep.pl
 test.Rout: test.R
 
 plots.Rout: plots.R
+
+stepClean:
+	$(RM) *.Rout *.RData *.pdf *.rdeps *.rda
 
 ### Makestuff
 
