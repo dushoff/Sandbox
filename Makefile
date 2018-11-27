@@ -6,6 +6,14 @@ current: target
 
 ##################################################################
 
+screen_session: caching.screen makestuff.screen
+
+%.screen: %
+	cd $< && screen -t "$<"
+
+######################################################################
+
+
 ## varnames
 
 test:
