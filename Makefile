@@ -62,6 +62,7 @@ subdirs += caching/ stepR/
 
 ## Working with Mike, who is complaining about rules
 
+Sources += test.R
 test.Rout: test.R
 
 ### Makestuff
