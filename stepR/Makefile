@@ -35,6 +35,9 @@ plots.Rout: plots.R
 stepClean:
 	$(RM) *.Rout *.RData *.pdf *.rdeps *.rda
 
+impSamp.Rout: impSamp.R
+impSamp.plots.Rout: impSamp.plots.R
+
 ### Makestuff
 
 -include $(ms)/git.mk
