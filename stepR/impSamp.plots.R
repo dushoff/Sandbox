@@ -1,4 +1,5 @@
 
+load("impSamp.RData")
 
 print(summary(Log_imp_wts))
 
@@ -16,4 +17,4 @@ plot(mv_samps[, 2], Log_imp_wts)
 
 print(mean(dat))
 print(sd(dat))
- 
+
