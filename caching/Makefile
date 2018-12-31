@@ -22,6 +22,8 @@ $(ms)/Makefile:
 
 ## ln -s ~/Dropbox/cache/Sandbox cache ##
 
+Sources += $(wildcard *.R)
+
 cache/slow.slow.Rout: slow.R
 	$(run-R)
 
