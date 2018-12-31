@@ -15,6 +15,7 @@ ms = makestuff
 
 Ignore += $(ms)
 Makefile: $(ms)/Makefile
+	touch $@
 $(ms)/Makefile:
 	ls ../makestuff/Makefile && /bin/ln -s ../makestuff 
 
@@ -34,6 +35,6 @@ fast.Rout: slow.slow.Rout fast.R
 
 -include $(ms)/git.mk
 -include $(ms)/visual.mk
--include $(ms)/newcache.mk
+-include $(ms)/cache.mk
 -include $(ms)/wrapR.mk
 
