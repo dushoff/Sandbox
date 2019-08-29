@@ -1,5 +1,7 @@
 # Sandbox
 ### Hooks for the editor to set the default target
+### Fucked by submodule interaction when testing "start simple"
+### Badly fucked, in fact, maybe better to BURN burn
 
 current: target
 -include target.mk
