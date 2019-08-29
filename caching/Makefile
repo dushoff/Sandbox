@@ -1,40 +1,35 @@
-# Sandbox/caching
-### Hooks for the editor to set the default target
-
+## Target (for playing fancy vim games with the default target)
 current: target
 -include target.mk
 
-##################################################################
+## Makestuff setup (automatically get makestuff if you clone this repo somewhere else)
+Sources += Makefile 
+msrepo = https://github.com/dushoff
 
-## Defs
+Ignore += makestuff
+Makefile: makestuff/Makefile
+makestuff/Makefile:
+	git clone $(msrepo)/makestuff
+	ls $@
 
-Sources += Makefile
-
-ms = makestuff
--include $(ms)/os.mk
-
-Ignore += $(ms)
-Makefile: $(ms)/Makefile
-	touch $@
-$(ms)/Makefile:
-	ls ../makestuff/Makefile && /bin/ln -s ../makestuff 
+### Makestuff rules you may want. The os is basic and shouldn't hurt
+### Others can be commented in and out
+-include makestuff/os.mk
+-include makestuff/perl.def
 
 ######################################################################
 
-## ln -s ~/Dropbox/cache/Sandbox cache ##
+# Main content here
 
-Sources += $(wildcard *.R)
+## You may want to CP content.mk here for convenience (if it exists),
+## then delete this line (although it won't hurt you much)
+-include content.mk
 
-cache/slow.slow.Rout: slow.R
-	$(run-R)
+######################################################################
 
-fast.Rout: slow.slow.Rout fast.R
-	$(run-R)
+### Makestuff rules
 
-### Makestuff
-
--include $(ms)/git.mk
--include $(ms)/visual.mk
--include $(ms)/cache.mk
--include $(ms)/wrapR.mk
+-include makestuff/git.mk
+-include makestuff/visual.mk
+-include makestuff/wrapR.mk
 
